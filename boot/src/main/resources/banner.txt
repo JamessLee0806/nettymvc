@@ -1,0 +1,4 @@
+application.version=1.0
+application.formatted-version=Boot 1.0
+spring-boot.version=1.4.0
+spring-boot.formatted-version=1.4.0.RELEASE
