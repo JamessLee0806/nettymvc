@@ -26,7 +26,7 @@ public class DispatcherServletChannelInitializer extends ChannelInitializer<Sock
 		AnnotationConfigWebApplicationContext wac=new AnnotationConfigWebApplicationContext();
 		wac.setServletConfig(config);
 		wac.setServletContext(ctx);
-	//	wac.register(WebConfig.class);
+		wac.register(WebConfig.class);
 		wac.refresh();
 		servlet = new DispatcherServlet(wac);
 		servlet.init(config);
