@@ -1,4 +1,11 @@
-package com.baocloud.netty.chap10.mvc;
+package com.netty.mvc.server;
+
+import static io.netty.handler.codec.http.HttpHeaderNames.CONTENT_TYPE;
+import static io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
+import static io.netty.handler.codec.http.HttpResponseStatus.INTERNAL_SERVER_ERROR;
+
+import java.util.List;
+import java.util.Map.Entry;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
@@ -21,19 +28,13 @@ import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.handler.codec.http.HttpVersion;
 import io.netty.util.CharsetUtil;
-import static io.netty.handler.codec.http.HttpResponseStatus.INTERNAL_SERVER_ERROR;
-import static io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
 
-import java.util.List;
-import java.util.Map.Entry;
-
-import static io.netty.handler.codec.http.HttpHeaderNames.CONTENT_TYPE;
-public class ServletNettyHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
+public class ServerHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
 	private final Servlet servlet;
 	private final ServletContext servletContext;
 
-	public ServletNettyHandler(Servlet servlet) {
+	public ServerHandler(Servlet servlet) {
 		this.servlet = servlet;
 		this.servletContext = servlet.getServletConfig().getServletContext();
 	}
