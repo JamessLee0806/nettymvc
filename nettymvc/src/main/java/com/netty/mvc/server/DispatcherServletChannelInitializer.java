@@ -5,7 +5,6 @@ import org.springframework.mock.web.MockServletContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import ch.qos.logback.ext.spring.web.LogbackConfigListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -22,8 +21,8 @@ public class DispatcherServletChannelInitializer extends ChannelInitializer<Sock
 		MockServletContext ctx = new MockServletContext();
 		ctx.setContextPath("/");
 		ctx.setDefaultServletName("springMvc");
-		ctx.addInitParameter("logbackConfigLocation", "classpath:/logback.xml");
-		ctx.addListener(LogbackConfigListener.class);
+		//ctx.addInitParameter("logbackConfigLocation", "classpath:/logback.xml");
+		//ctx.addListener(LogbackConfigListener.class);
 		MockServletConfig config = new MockServletConfig(ctx);
 		AnnotationConfigWebApplicationContext wac=new AnnotationConfigWebApplicationContext();
 		wac.setServletConfig(config);
