@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>nettymvc</groupId>
-  <artifactId>nettymvc</artifactId>
-  <version>1.0</version>
-  <packaging>jar</packaging>
-  <name>nettymvc</name>
-  <url>http://maven.apache.org</url>
-   <parent>
+	<groupId>nettymvc</groupId>
+	<artifactId>nettymvc</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>nettymvc</name>
+	<url>http://maven.apache.org</url>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.0.RELEASE</version>
@@ -18,8 +18,8 @@
 		<sps.version>4.3.2.RELEASE</sps.version>
 	</properties>
 
-  <dependencies>
-    <dependency>
+	<dependencies>
+		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.17</version>
@@ -49,9 +49,9 @@
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 		<dependency>
-		  <groupId>javax.servlet</groupId>
-		  <artifactId>servlet-api</artifactId>
-		  <version>3.0-alpha-1</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -91,8 +91,8 @@
 			<artifactId>protobuf-java</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-  </dependencies>
-  <build>
+	</dependencies>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
