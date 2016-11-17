@@ -1,16 +1,19 @@
 package com.netty.mvc;
 
-import com.netty.mvc.server.NettyServer;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.netty.mvc.server.WebConfig;
+import com.netty.mvc.sps.beans.SingleObj;
 
 public class App {
 	public static void main(String[] args) throws Exception {
-		//NettyServer.bind();
-		double dd=60;
-		int  c=(int)Math.ceil(((dd / 100) * 399900));
-		System.out.println(c);
-		double rant=(60.0 / 100);
-		System.out.println(rant);
-		System.out.println(Math.ceil(((dd / 100) * 399900)));
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(WebConfig.class);
+		SingleObj objA = ctx.getBean("singleBean", SingleObj.class);
+		SingleObj objB = ctx.getBean("singleBean", SingleObj.class);
+		System.out.println(objA == objB);
+		System.out.println(objA.equals(objB));
+
+		ctx.close();
 	}
 
 }

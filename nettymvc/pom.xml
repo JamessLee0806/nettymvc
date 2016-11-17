@@ -92,9 +92,14 @@
 			<version>3.1.0</version>
 		</dependency>
 		<dependency>
-		 <groupId>org.logback-extensions</groupId>
-		 <artifactId>logback-ext-spring</artifactId>
-		 <version>0.1.4</version>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.9.2</artifactId>
+			<version>0.8.2.2</version>
 		</dependency>
 	</dependencies>
 	<build>
