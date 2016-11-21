@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
+import com.baocloud.beans.SimpleBean;
 import com.baocloud.dao.ReaderRepository;
 import com.baocloud.entity.Reader;
 
@@ -17,9 +18,12 @@ import com.baocloud.entity.Reader;
 public class ReaderController {
 	@Autowired
 	private ReaderRepository readerResp;
-	
+
+	@Autowired
+	SimpleBean bean;
+
 	@RequestMapping("deleteUsers")
-	public String delteAll(){
+	public String delteAll() {
 		readerResp.deleteAll();
 		return "success";
 	}
@@ -41,14 +45,19 @@ public class ReaderController {
 	}
 
 	@RequestMapping("login")
-	public String login(Reader reader,HttpServletRequest req) {
-		Enumeration<String>  names= req.getHeaderNames();
-		while(names.hasMoreElements()){
-			String name=names.nextElement();
-			System.out.println("name="+name+"    value:"+req.getHeader(name));
+	public String login(Reader reader, HttpServletRequest req) {
+		Enumeration<String> names = req.getHeaderNames();
+		while (names.hasMoreElements()) {
+			String name = names.nextElement();
+			System.out.println("name=" + name + "    value:" + req.getHeader(name));
 		}
 		reader = readerResp.findByUsernameAndPassword(reader.getUsername(), reader.getPassword());
 		return JSON.toJSONString(reader);
 
+	}
+
+	@RequestMapping("simpleBean")
+	public String simpleBean() {
+		return bean.toString();
 	}
 }

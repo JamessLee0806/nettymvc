@@ -11,7 +11,6 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <property name="appName" value="netty"></property>
     <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-        <Encoding>UTF-8</Encoding>
         <!--
         日志输出格式：%d表示日期时间，%thread表示线程名，%-5level：级别从左显示5个字符宽度
         %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 %msg：日志消息，%n是换行符
@@ -23,7 +22,6 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
 
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->  
     <appender name="appLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Encoding>UTF-8</Encoding>
         <!-- 指定日志文件的名称 -->  
         <file>${LOG_HOME}/${appName}.log</file>
         <!--
